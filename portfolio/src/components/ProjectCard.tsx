@@ -10,6 +10,7 @@ const useStyles = makeStyles({
   root: {
     margin: 20,
     minWidth: 200,
+    // padding: "10px",
   },
   contentImage: {
     width: "100%",
@@ -20,14 +21,20 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  cardContent: {
+    border: 0,
+    borderRadius: 3,
+    color: "white",
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+  },
 });
 
-export default function ProjectCard(props) {
+export default function ProjectCard(props: any) {
   const classes = useStyles();
   const { title, description, image } = props;
   return (
     <Card className={classes.root}>
-      <CardContent>
+      <CardContent className={classes.cardContent}>
         <Typography
           className={classes.title}
           color="textSecondary"
@@ -38,7 +45,7 @@ export default function ProjectCard(props) {
         <Typography className={classes.pos} color="textSecondary">
           {description}
         </Typography>
-        <img src={image} className={classes.contentImage} />
+        <img src={image} className={classes.contentImage} alt="Project" />
       </CardContent>
       <CardActions>
         <Button size="small">Visit</Button>

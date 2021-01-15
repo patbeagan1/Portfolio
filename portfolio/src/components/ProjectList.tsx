@@ -5,26 +5,24 @@ import React from "react";
 
 const useStyles = makeStyles({
   projectCardContainer: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     border: 0,
     borderRadius: 3,
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    color: "white",
+    boxShadow: "0 3px 5px 2px rgba(100, 105, 100, .3)",
   },
 });
 
-const ProjectList = (props) => {
+const ProjectList = (props: { projects: any }) => {
   const { projects } = props;
   const classes = useStyles();
-  const SingleItem = (props) => {
+  const SingleItem = (props: any) => {
     return (
-      <Grid xs={3} item className={classes.projectCardContainer}>
+      <Grid md={3} sm={4} xs={6} item>
         <ProjectCard {...props} />
       </Grid>
     );
   };
   return (
-    <Grid container>{projects.map((project) => SingleItem(project))}</Grid>
+    <Grid container>{projects.map((project: any) => SingleItem(project))}</Grid>
   );
 };
 
