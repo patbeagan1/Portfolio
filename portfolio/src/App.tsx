@@ -2,6 +2,8 @@ import ProjectList from "./components/ProjectList";
 import Name from "./components/Name";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar } from "@material-ui/core";
+import React from "react";
+import Ticker from "react-ticker";
 
 const useStyles = makeStyles({
   app: {
@@ -9,7 +11,7 @@ const useStyles = makeStyles({
   },
 
   appHeader: {
-    minHeight: "100vh",
+    minHeight: "50vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -45,8 +47,15 @@ function App() {
   ];
   return (
     <div className={classes.app}>
+      <Ticker>
+        {({ index }) => (
+          <>
+            <h1>This is the Headline of element #{index}!</h1>
+            <img src="https://duckduckgo.com/assets/common/dax-logo.svg" alt="" />
+          </>
+        )}
+      </Ticker>
       <header className={classes.appHeader}>
-        <AppBar></AppBar>
         <Name name="Patrick Beagan" />
         <ProjectList projects={localProjectList} />
       </header>

@@ -17,7 +17,7 @@ const ProjectList = (props: { projects: any }) => {
   const SingleItem = (props: any) => {
     return (
       <Grid md={3} sm={4} xs={6} item>
-        <ProjectCard {...props} />
+        <ProjectCard {...props} className={classes.projectCardContainer} />
       </Grid>
     );
   };
