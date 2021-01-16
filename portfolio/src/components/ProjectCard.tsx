@@ -10,13 +10,9 @@ const useStyles = makeStyles({
   root: {
     margin: 20,
     minWidth: 200,
-    // padding: "10px",
   },
   contentImage: {
     width: "100%",
-  },
-  title: {
-    fontSize: 14,
   },
   pos: {
     marginBottom: 12,
@@ -35,11 +31,7 @@ export default function ProjectCard(props: any) {
   return (
     <Card className={classes.root}>
       <CardContent className={classes.cardContent}>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
+        <Typography variant="h4" gutterBottom>
           {title}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
