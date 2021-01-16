@@ -1,21 +1,11 @@
 import React from "react";
-import Ticker from "react-ticker";
 import Homescreen from "./screens/Homescreen";
+import Marquee from "./components/Marquee";
 
 function App() {
   return (
     <div>
-      <Ticker>
-        {({ index }) => (
-          <>
-            <h1>This is the Headline of element #{index}!</h1>
-            <img
-              src="https://duckduckgo.com/assets/common/dax-logo.svg"
-              alt=""
-            />
-          </>
-        )}
-      </Ticker>
+      <Marquee />
       <Homescreen
         localProjectList={[
           {
